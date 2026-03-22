@@ -40,7 +40,7 @@ When uploading GIFs to Steam profiles, the platform often enforces strict aspect
 
 ## 🚀 <big>How to Use</big>
 
-1.  **Download** the `Steamartwork_patcher.bat` file.
+1.  **Download** the `Steamartwork_patcher.bat` file (or copy the code and make a bat file yourself).
 2.  **Place** it into the folder containing your exported GIFs.
 3.  **Run** the file by double-clicking it.
 4.  The script includes a safety prompt. Simply press **Y** to start or **N** to cancel 

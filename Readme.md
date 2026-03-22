@@ -52,3 +52,14 @@ Para que el truco funcione, usa estos códigos en la consola de tu navegador (`F
 **Para Workshop Largo:**
 ```javascript
 $J('[name=consumer_app_id]').val(480);$J('[name=file_type]').val(0);$J('[name=visibility]').val(0);
+```
+**Para Workshop Largo:**
+```javascript
+$J('[name=consumer_app_id]').val(480);$J('[name=file_type]').val(9);$J('[name=visibility]').val(0);
+```
+
+##⚙️ <big>Technical Details</big>
+
+El script lee los datos binarios del GIF. En la especificación GIF89a, 0x3B marca el final del archivo. Al cambiarlo a 0x21, el validador de subida de Steam ignora ciertas comprobaciones de dimensiones mientras que el navegador sigue renderizando el GIF correctamente.
+
+    Hecho con: Windows Batch & PowerShell Core.

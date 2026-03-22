@@ -69,10 +69,9 @@ $J('[name=consumer_app_id]').val(480);$J('[name=file_type]').val(9);$J('[name=vi
 
 ##  ⚙️ <big>Technical Details</big>
 
-The script reads the binary data of the GIF. In the GIF89a specification, 0x3B marks the end of the file. By changing it to 0x21, the Steam upload validator ignores certain dimension checks while the browser still renders the GIF correctly.
+The script reads the binary data of the GIF. In the GIF89a specification, `0x3B` marks the end of the file. By changing it to `0x21`, the Steam upload validator ignores certain dimension checks while the browser still renders the GIF correctly.
 
-    Logic: Binary Stream Modification
-
-    Core: Windows Batch & PowerShell Core integration
-
+**Built with:**
+- Windows Batch
+- PowerShell Core (Natively integrated)
 ---

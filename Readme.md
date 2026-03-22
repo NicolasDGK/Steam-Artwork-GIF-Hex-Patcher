@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://socialify.git.ci/tu-usuario/Steam-Artwork-GIF-Hex-Patcher/image?font=Inter&language=1&name=1&owner=1&pattern=Circuit%20Board&theme=Dark" alt="Steam-Artwork-GIF-Hex-Patcher" width="640" height="320" />
+  <img src="https://socialify.git.ci/YOUR_GITHUB_USERNAME/Steam-Artwork-GIF-Hex-Patcher/image?font=Inter&language=1&name=1&owner=1&pattern=Circuit%20Board&theme=Dark" alt="Steam-Artwork-GIF-Hex-Patcher" width="640" height="320" />
 </p>
 
 ---
@@ -21,45 +21,55 @@
 ## 📖 <big>Overview</big>
 
 <p align="justify">
-Cuando subes GIFs a los perfiles de Steam, la plataforma suele imponer límites estrictos de relación de aspecto y altura. Al modificar el byte final de un archivo GIF de <code>0x3B</code> (el trailer estándar) a <code>0x21</code> (un bloque de extensión), puedes saltarte estas restricciones para crear <b>artworks infinitos o de formato largo</b>.
+When uploading GIFs to Steam profiles, the platform often enforces strict aspect ratio and height limits. By modifying the final byte of a GIF file from <code>0x3B</code> (the standard GIF trailer) to <code>0x21</code> (an extension block), you can bypass these restrictions to create <b>"infinite" or long-format artworks</b>.
 </p>
 
 > [!TIP]
-> Esta herramienta automatiza ese proceso tedioso para múltiples archivos a la vez, eliminando la necesidad de editores hex manuales.
+> This tool automates that tedious process for multiple files at once, eliminating the need for manual hex editors.
 
 ---
 
 ## ✨ <big>Features</big>
 
-* 🚀 **No Installation Required:** Corre nativamente en Windows 10/11 mediante un híbrido Batch-PowerShell.
-* 📦 **Batch Processing:** Parchea todos los GIFs de una carpeta simultáneamente.
-* 🛡️ **Non-Destructive:** Crea una carpeta `/output` para que tus archivos originales estén seguros.
-* 🏷️ **Automatic Renaming:** Añade el sufijo `_hex` para identificar fácilmente los archivos listos.
+* 🚀 **No Installation Required:** Uses a Batch-PowerShell hybrid that runs natively on Windows 10/11.
+* 📦 **Batch Processing:** Patches all GIFs in a folder simultaneously.
+* 🛡️ **Non-Destructive:** Creates an `/output` folder so your original files remain untouched.
+* 🏷️ **Automatic Renaming:** Adds a `_hex` suffix to processed files for easy identification.
 
 ---
 
 ## 🚀 <big>How to Use</big>
 
-1.  **Descarga** el archivo `Steamartwork_patcher.bat`.
-2.  **Ubícalo** en la carpeta donde tengas tus GIFs exportados.
-3.  **Ejecuta** el archivo con doble clic.
-4.  Presiona **Y** en la consola para confirmar el inicio.
-5.  ¡Listo! Tus archivos parcheados estarán en la carpeta `output`.
+1.  **Download** the `Steamartwork_patcher.bat` file.
+2.  **Place** it into the folder containing your exported GIFs.
+3.  **Run** the file by double-clicking it.
+4.  Press **Y** in the console to confirm the safety prompt.
+5.  Your patched GIFs will be ready in the newly created `output` folder.
 
 ### 🛠️ Steam Console Scripts
-Para que el truco funcione, usa estos códigos en la consola de tu navegador (`F12` > Console) al subir el archivo:
+To bypass the upload validation, paste the corresponding code into your browser console (`F12` > Console) while on the Steam upload page:
 
-**Para Workshop Largo:**
+**For Long Artwork Showcase:**
+```javascript
+$J('#image_width').val(1000).attr('id',''),$J('#image_height').val(1).attr('id','');
+```
+**For Long Workshop Showcases:**
 ```javascript
 $J('[name=consumer_app_id]').val(480);$J('[name=file_type]').val(0);$J('[name=visibility]').val(0);
 ```
-**Para Workshop Largo:**
+**For Long Guides:**
 ```javascript
 $J('[name=consumer_app_id]').val(480);$J('[name=file_type]').val(9);$J('[name=visibility]').val(0);
 ```
 
-##⚙️ <big>Technical Details</big>
+---
 
-El script lee los datos binarios del GIF. En la especificación GIF89a, 0x3B marca el final del archivo. Al cambiarlo a 0x21, el validador de subida de Steam ignora ciertas comprobaciones de dimensiones mientras que el navegador sigue renderizando el GIF correctamente.
+##  ⚙️ <big>Technical Details</big>
 
-    Hecho con: Windows Batch & PowerShell Core.
+The script reads the binary data of the GIF. In the GIF89a specification, 0x3B marks the end of the file. By changing it to 0x21, the Steam upload validator ignores certain dimension checks while the browser still renders the GIF correctly.
+
+    Logic: Binary Stream Modification
+
+    Core: Windows Batch & PowerShell Core integration
+
+---

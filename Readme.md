@@ -43,8 +43,9 @@ When uploading GIFs to Steam profiles, the platform often enforces strict aspect
 1.  **Download** the `Steamartwork_patcher.bat` file.
 2.  **Place** it into the folder containing your exported GIFs.
 3.  **Run** the file by double-clicking it.
-4.  Press **Y** in the console to confirm the safety prompt.
+4.  The script includes a safety prompt. Simply press **Y** to start or **N** to cancel 
 5.  Your patched GIFs will be ready in the newly created `output` folder.
+6.  Upload to Steam using the corresponding browser console script (READ BELOW). 
 
 ### 🛠️ Steam Console Scripts
 To bypass the upload validation, paste the corresponding code into your browser console (`F12` > Console) while on the Steam upload page:

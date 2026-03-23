@@ -1,13 +1,9 @@
-<p align="center">
-  <img src="https://socialify.git.ci/YOUR_GITHUB_USERNAME/Steam-Artwork-GIF-Hex-Patcher/image?font=Inter&language=1&name=1&owner=1&pattern=Circuit%20Board&theme=Dark" alt="Steam-Artwork-GIF-Hex-Patcher" width="640" height="320" />
-</p>
-
 ---
 
-<h1 align="center">🎮 Steam Artwork GIF Hex Patcher</h1>
+<h1 align="center">🎮 Steam Artwork GIF Hex Patcher & Workshop Splitter</h1>
 
 <p align="center">
-  <strong>A lightweight, zero-dependency Windows utility to automate the "Hex Trick" for Steam Artworks.</strong>
+  <strong>A dual-utility suite to automate Workshop splitting and the "Hex Trick" for Steam Profile Artworks.</strong></strong>
 </p>
 
 <p align="center">
@@ -21,7 +17,7 @@
 ## 📖 <big>Overview</big>
 
 <p align="justify">
-When uploading GIFs to Steam profiles, the platform often enforces strict aspect ratio and height limits. By modifying the final byte of a GIF file from <code>0x3B</code> (the standard GIF trailer) to <code>0x21</code> (an extension block), you can bypass these restrictions to create <b>"infinite" or long-format artworks</b>.
+Bypass Steam's strict upload restrictions for Workshop and Artwork showcases. This repository provides two specialized tools: one for <b>frame-perfect splitting</b> of Workshop animations and another for the <b>Hex Patcher</b> trick to enable "infinite" height artworks.
 </p>
 
 > [!TIP]
@@ -29,23 +25,32 @@ When uploading GIFs to Steam profiles, the platform often enforces strict aspect
 
 ---
 
-## ✨ <big>Features</big>
+## ✨ <big>The Tools</big>
 
-* 🚀 **No Installation Required:** Uses a Batch-PowerShell hybrid that runs natively on Windows 10/11.
-* 📦 **Batch Processing:** Patches all GIFs in a folder simultaneously.
-* 🛡️ **Non-Destructive:** Creates an `/output` folder so your original files remain untouched.
-* 🏷️ **Automatic Renaming:** Adds a `_hex` suffix to processed files for easy identification.
+### 1️⃣ Workshop Splitter (`WorkshopSplitter.bat`)
+* **Automatic Resizing:** Scales your GIF to the required **800x450** resolution.
+* **5-Way Split:** Perfectly crops your GIF into 5 segments (158px width) with the exact 2px margins required for a seamless Steam Workshop look.
+* **Smart FPS Control:** Allows you to set a custom FPS to stay under Steam's 300-frame limit.
+* *Note: Requires `ffmpeg.exe` in the folder.*
+
+### 2️⃣ Steam Artwork GHP (`SteamArtworkGHP.bat`)
+* **The "Hex Trick":** Automatically changes the final byte from `0x3B` to `0x21`.
+* **Context Aware:** If it detects a `workshop_output` folder, it patches those files automatically. Otherwise, it patches GIFs in the current directory.
+* **Non-Destructive:** Saves final versions to a `patched_gifs` subfolder.
 
 ---
 
 ## 🚀 <big>How to Use</big>
 
-1.  **Download** the `Steamartwork_patcher.bat` file from Releases (or copy the code and make a bat file yourself).
-2.  **Place** it into the folder containing your exported GIFs.
-3.  **Run** the file by double-clicking it.
-4.  The script includes a safety prompt. Simply press **Y** to start or **N** to cancel 
-5.  Your patched GIFs will be ready in the newly created `output` folder.
-6.  Upload to Steam using the corresponding browser console script (READ BELOW). 
+To ensure the best quality under Steam's **5MB limit**, follow these steps:
+
+1.  **Split:** Run `WorkshopSplitter.bat` to generate the 5 raw segments in the `/workshop_output` folder.
+2.  **Optimize:** If any of your gifs are over 5 MB, take those GIFs to an optimizer (like [Ezgif](https://ezgif.com/optimize)) to ensure each is under 5MB. 
+3.  **Patch:** Run `SteamArtworkGHP.bat`. It will detect your files and apply the Hex patch.
+4.  **Upload:** Use the browser console scripts below to upload the gifs to your Steam.
+
+---
+
 
 ### 🛠️ Steam Console Scripts
 To bypass the upload validation, paste the corresponding code into your browser console (`F12` > Console) **while** on the Steam upload page and **before** clicking `Save and Continue`:
@@ -67,11 +72,12 @@ $J('[name=consumer_app_id]').val(480);$J('[name=file_type]').val(9);$J('[name=vi
 
 ---
 
-##  ⚙️ <big>Technical Details</big>
+##  ⚙️ Technical Requirements
 
-The script reads the binary data of the GIF. In the GIF89a specification, `0x3B` marks the end of the file. By changing it to `0x21`, the Steam upload validator ignores certain dimension checks while the browser still renders the GIF correctly.
+  OS: Windows 10 or 11.
 
-**Built with:**
-- Windows Batch
-- PowerShell Core (Natively integrated)
+  FFmpeg: WorkshopSplitter.bat requires ffmpeg.exe to be present in the same folder.
+
+  Native Tools: Uses PowerShell (integrated into Windows) for binary file manipulation.
+  
 ---

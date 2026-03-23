@@ -43,10 +43,11 @@ Bypass Steam's strict upload restrictions for Workshop and Artwork showcases. Th
 
 To ensure the best quality under Steam's **5MB limit**, follow these steps:
 
-1.  **Split:** Run `WorkshopSplitter.bat` to generate the 5 raw segments in the `/workshop_output` folder.
-2.  **Optimize:** If any of your gifs are over 5 MB, take those GIFs to an optimizer (like [Ezgif](https://ezgif.com/optimize)) to ensure each is under 5MB. 
-3.  **Patch:** Run `SteamArtworkGHP.bat`. It will detect your files and apply the Hex patch.
-4.  **Upload:** Use the browser console scripts below to upload the gifs to your Steam.
+1.  **Download:** Get the latest version from Releases (or copy the code and make a bat file yourself).
+2.  **Split:** Run `WorkshopSplitter.bat` to generate the 5 raw segments in the `/workshop_output` folder.
+3.  **Optimize:** If any of your gifs are over 5 MB, take those GIFs to an optimizer (like [Ezgif](https://ezgif.com/optimize)) to ensure each is under 5MB. 
+4.  **Patch:** Run `SteamArtworkGHP.bat`. It will detect your files and apply the Hex patch.
+5.  **Upload:** Use the browser console scripts below to upload the gifs to your Steam.
 
 ---
 

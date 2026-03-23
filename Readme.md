@@ -3,7 +3,7 @@
 <h1 align="center">🎮 Steam Artwork GIF Hex Patcher & Workshop Splitter</h1>
 
 <p align="center">
-  <strong>A dual-utility suite to automate Workshop splitting and the "Hex Trick" for Steam Profile Artworks.</strong></strong>
+  <strong>A dual-utility suite to automate Workshop splitting and Hex patcher for Steam Profile GIF Artworks.</strong></strong>
 </p>
 
 <p align="center">
@@ -28,9 +28,8 @@ Bypass Steam's strict upload restrictions for Workshop and Artwork showcases. Th
 ## ✨ <big>The Tools</big>
 
 ### 1️⃣ Workshop Splitter (`WorkshopSplitter.bat`)
-* **Automatic Resizing:** Scales your GIF to the required **800x450** resolution.
+* **Automatic Resizing:** Scales your GIF to **800x450** resolution.
 * **5-Way Split:** Perfectly crops your GIF into 5 segments (158px width) with the exact 2px margins required for a seamless Steam Workshop look.
-* **Smart FPS Control:** Allows you to set a custom FPS to stay under Steam's 300-frame limit.
 * *Note: Requires `ffmpeg.exe` in the folder.*
 
 ### 2️⃣ Steam Artwork GHP (`SteamArtworkGHP.bat`)

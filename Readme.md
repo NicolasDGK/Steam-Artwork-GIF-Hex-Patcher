@@ -17,7 +17,7 @@
 ## 📖 <big>Overview</big>
 
 <p align="justify">
-Bypass Steam's strict upload restrictions for Workshop and Artwork showcases. This repository provides two specialized tools: one for <b>frame-perfect splitting</b> of Workshop animations and another for the <b>Hex Patcher</b> trick to enable "infinite" height artworks.
+Bypass Steam's strict upload restrictions for Workshop and Artwork showcases. This repository provides two specialized tools: one for <b>frame-perfect splitting</b> of Workshop animations and another for the <b>Hex Patcher</b> patch to enable "infinite" height artworks.
 </p>
 
 > [!TIP]
@@ -33,7 +33,7 @@ Bypass Steam's strict upload restrictions for Workshop and Artwork showcases. Th
 * *Note: Requires `ffmpeg.exe` in the folder.*
 
 ### 2️⃣ Steam Artwork GHP (`SteamArtworkGHP.bat`)
-* **The "Hex Trick":** Automatically changes the final byte from `0x3B` to `0x21`.
+* **The "Hex patch":** Automatically changes the final byte from `0x3B` to `0x21`.
 * **Context Aware:** If it detects a `workshop_output` folder, it patches those files automatically. Otherwise, it patches GIFs in the current directory.
 * **Non-Destructive:** Saves final versions to a `patched_gifs` subfolder.
 
